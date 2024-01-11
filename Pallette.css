@@ -2,13 +2,13 @@ body{
     background-color:#101010;
 }
 h1{
-    color:antiquewhite; 
+    color:#EFEFEF; 
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
 
 h2{
-    color:antiquewhite;
+    color: #CDCDCD;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -22,4 +22,11 @@ p{
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color:currentColor;
+}
+a:hover{
+    text-decoration:underline;
 }
