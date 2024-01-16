@@ -3,20 +3,32 @@
     <head>
         <link rel="stylesheet" href ="pallette.css">
         <style>
+            @keyframes animate{
+                to{}
+            }
         .container{
             display: flex;
             justify-content: center;
             align-content: center;
-            width:75%;
         }
-        .centering{
+        .centerImage{
             position:absolute;
             top:50%;
             left:50%;
             transform:translate(-40%,-50%);
         }
+        .centerIntro{
+            visibility: hidden;
+            opacity: 0%;
+            position:absolute;
+            width: 200%;
+            top:50%;
+            left:50%;
+            transform:translate(-40%,-50%);
+        }
         .navbar{
-            display: flex;
+            visibility: hidden;
+            opacity: 0%;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
@@ -31,14 +43,14 @@
     </head>
     <body>        
         <main>
-            <div class = "centering">
+            <div class = "centerImage">
                 <div class = "container">
-                    <img src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
-                    <p style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
+                    <img id = "image1" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;" onclick="introduction()">
+                    <p id = "intro" class = "centerIntro" ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
                 </div>  
             </div>
             
-            <div class = "navbar">
+            <div id = "navbar" class = "navbar">
                 <h2>
                     <ul>
                     <li><a href = "Projects.html">Projects</a></li>
@@ -48,5 +60,22 @@
                 </h2>
             </div>
         </main>
+        <script>
+            function introduction(){
+                document.getElementById("intro").style.visibility = "visible"
+                document.getElementById("intro").style.opacity = "100%"
+                document.getElementById("intro").style.transform = "translate(-15%,-50%)"
+                document.getElementById("intro").style.transition = "1s"
+                document.getElementById("image1").style.transform = "translate(-100%,0%)"
+                document.getElementById("image1").style.transition = "1s"
+                document.getElementById("intro")
+                document.getElementById("navbar").style.visibility = "visible"
+                document.getElementById("navbar").style.transform = "translate(-50%,125%)"
+                document.getElementById("navbar").style.opacity = "100%"
+                document.getElementById("navbar").style.transition= "1s"
+                document.getElementById("navbar").style.transitionDelay= "3s"                
+
+            }
+        </script>
     </body>
 </html>
