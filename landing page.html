@@ -40,31 +40,63 @@
             display:inline-flex;
             visibility: hidden;
         }
+        .MainPage{
+            display: block;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transition: translate(-50%,-50%);
+            opacity: 100%;
+        }
+        .ProjectsPage{
+            visibility: hidden;
+
+        }
         </style>
         
     </head>
     <body>        
         <main>
+            <!--Main Page-->
+            <div id = "MainPage" class = "MainPage">
             <div class = "centerImage">
                 <div class = "container">
                     <img id = "image1" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;" onclick="introduction()">
-                    <p id = "intro" class = "centerIntro" ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
+                    <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
                 </div>  
             </div>
             
             <div id = "navbar" class = "navbar">
                 <h2>
                     <ul>
-                    <li><a href = "Projects.html">Projects</a></li>
-                    <li><a href = "Resume & Connections.html">Resume & Connections</a></li>
+                    <li><a onclick="movePage('MainPage', 'ProjectsPage')" >Projects</a></li>
+                    <li><a>Resume & Connections</a></li>
                     <li>
                         <div>
-                            <button>Contact me</button>
+                            <button onclick="movePage('MainPage', 'ContactPage')">Contact me</button>
                         </div>
                     </li>
  
                     </ul>
                 </h2>
+            </div>
+            </div>
+
+            <div id = "ProjectsPage" class = "ProjectsPage">
+                <div class = "container">
+                <img src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
+                <p style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
+            </div>
+            
+            <div class = "navbar">
+                <h2>
+                    <ul>
+                    <li><a href = "landing page.html">Main Page</a></li>
+                    <li><a href = "Resume & Connections.html">Resume & Connections</a></li>
+                    <li><a href = "Contact.html">Contact me</a></li>
+                    </ul>
+                </h2>
+            </div>
             </div>
         </main>
         <script>
@@ -76,6 +108,7 @@
                 document.getElementById("image1").style.transform = "translate(-100%,0%)"
                 document.getElementById("image1").style.transition = "1s"
                 document.getElementById("navbar").style.visibility = "visible"
+                document.getElementById("navbar").style.display = "flex"
                 document.getElementById("navbar").style.transform = "translate(-50%,125%)"
                 document.getElementById("navbar").style.opacity = "100%"
                 document.getElementById("navbar").style.transition= "1s"
@@ -84,6 +117,19 @@
             function showContact(){
                 document.getElementById("Contact").style.visibility = "visible"
                 document.getElementById("Contact").style.opacity = "100%"
+            }
+            function movePage(id1, id2){
+                document.getElementById(id1).style.opacity = "0%"
+                document.getElementById(id1).style.transition = "1s"
+                document.getElementById(id1).style.transitionDelay = "1s"
+                document.getElementById(id1).style.display = "none"
+                document.getElementById(id1).style.transitionDelay = "1s"
+
+                document.getElementById(id2).style.display = "flex"
+                document.getElementById(id2).style.visibility = "visible"
+                document.getElementById(id2).style.opacity = "100%"
+                document.getElementById(id2).style.transition = "1s"
+                document.getElementById(id2).style.transitionDelay = "1s"
             }
         </script>
     </body>
