@@ -57,12 +57,14 @@
                     <ul>
                     <li><a href = "Projects.html">Projects</a></li>
                     <li><a href = "Resume & Connections.html">Resume & Connections</a></li>
-                    <li><a onclick = "showContact()">Contact me</a></li>
+                    <li>
+                        <div>
+                            <button>Contact me</button>
+                        </div>
+                    </li>
+ 
                     </ul>
                 </h2>
-            </div>
-            <div id="Contact">
-                <p>Email: emailhere</p>
             </div>
         </main>
         <script>
@@ -73,12 +75,11 @@
                 document.getElementById("intro").style.transition = "1s"
                 document.getElementById("image1").style.transform = "translate(-100%,0%)"
                 document.getElementById("image1").style.transition = "1s"
-                document.getElementById("intro")
                 document.getElementById("navbar").style.visibility = "visible"
                 document.getElementById("navbar").style.transform = "translate(-50%,125%)"
                 document.getElementById("navbar").style.opacity = "100%"
                 document.getElementById("navbar").style.transition= "1s"
-                document.getElementById("navbar").style.transitionDelay= "3s"                
+                document.getElementById("navbar").style.transitionDelay= "2s"                
             }
             function showContact(){
                 document.getElementById("Contact").style.visibility = "visible"
