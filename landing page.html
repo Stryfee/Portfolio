@@ -26,19 +26,10 @@
         .navbar{
             visibility: hidden;
             opacity: 0%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
             position:absolute;
             top:50%;
             left:50%;
-            transform:translate(-50%,75%)
-        }
-        .ContactList{
-            opacity: 0%;
-            display:inline-flex;
-            visibility: hidden;
+            transform: translate(-50%,-50%);
         }
         .MainPage{
             display: block;
@@ -66,9 +57,9 @@
                 </div>  
             </div>
             
-            <div id = "navbar" class = "navbar">
+            <div>
                 <h2>
-                    <ul>
+                    <ul class = "navbar" id = "navbar">
                     <li><a onclick="movePage('MainPage', 'ProjectsPage')" >Projects</a></li>
                     <li><a>Resume & Connections</a></li>
                     <li>

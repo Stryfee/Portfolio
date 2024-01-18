@@ -21,6 +21,8 @@ p{
 }
 li > a{
     text-decoration: none;
+    text-justify:center;
+    text-align: center;
     color:currentColor;
 }
 li > a:hover{
@@ -29,21 +31,17 @@ li > a:hover{
 }
 li{
     display: inline-flex;
+    flex-direction: row;
     list-style-type: none;
     margin: 5px;
     padding: 0;
     background-color: #222222;
 }
-li > *{
-    overflow: none; 
-}
 li > button{
     border:none; 
     background-color: #222222;
     color: #CDCDCD;
-    font-family: 'Nunito', sans-serif;
-    font-weight:bold; 
-    font-size: inherit
+    cursor: pointer;
 }
 
 li>button:hover{
