@@ -31,6 +31,14 @@
             left:50%;
             transform: translate(-50%,-50%);
         }
+        .navbar2{
+            visibility: hidden;
+            opacity: 0%;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
         .MainPage{
             display: block;
             position:absolute;
@@ -41,7 +49,6 @@
         }
         .ProjectsPage{
             visibility: hidden;
-
         }
         </style>
         
@@ -72,22 +79,24 @@
                 </h2>
             </div>
             </div>
-
-            <div id = "ProjectsPage" class = "ProjectsPage">
-                <div class = "container">
-                <img src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
-                <p style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
-            </div>
             
-            <div class = "navbar">
-                <h2>
-                    <ul>
-                    <li><a href = "landing page.html">Main Page</a></li>
-                    <li><a href = "Resume & Connections.html">Resume & Connections</a></li>
-                    <li><a href = "Contact.html">Contact me</a></li>
-                    </ul>
-                </h2>
-            </div>
+            <!--Projects Page-->
+            <div id = "ProjectsPage" class="ProjectsPage">
+                <div style = "position:absolute; left:50%; transform: translateX(-50%);">
+                    <h1>My Projects</h1>
+                    <h2>
+                        <ul style = "align-items: center; justify-content: center;">
+                            <li><a href = "https://github.com/Stryfee/Hangman-Assignment" target="_blank">
+                                <div style = "display: flex; flex-direction: column; align-items: center; width: 200px; height: 150px;"><img style = "width: 100px; height: 100px;" src = "https://raw.githubusercontent.com/openintents/filemanager/master/promotion/icons/ic_launcher_filemanager_512.png">Hangman</div>
+                            </a></li>
+                            <li>
+                                <a href = "https://github.com/Stryfee/ccc-solutions" target="_blank"> 
+                                    <div style = "display: flex; flex-direction: column; align-items: center; width:200px; height: 150px;"><img style = "width: 100px; height: 100px;" src = "https://raw.githubusercontent.com/openintents/filemanager/master/promotion/icons/ic_launcher_filemanager_512.png">UWaterloo CCC</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </h2>
+                </div>
             </div>
         </main>
         <script>
