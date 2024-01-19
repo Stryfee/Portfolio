@@ -24,19 +24,13 @@
             transform:translate(-40%,-50%);
         }
         .navbar{
+            display: flex;
+            justify-content: center;
+            align-content: center;
             visibility: hidden;
             opacity: 0%;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%);
         }
         .MainPage{
-            display: block;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transition: translate(-50%,-50%);
             opacity: 100%;
         }
         .ProjectsPage{
@@ -74,8 +68,8 @@
             
             <!--Projects Page-->
             <div id = "ProjectsPage" class="ProjectsPage">
-                <div>
-                    <ul style = "display: flex; align-content: end;">
+                <div style = "display: flex; justify-content: flex-end;">
+                    <ul>
                         <li><button onclick="movePage('ProjectsPage', 'MainPage')" style = "color: white; font-size: large; font-weight: bold;">Main Page</button></li>
                         <li><button>Resume & Connections</button></li>
                         <li><button>Contact me</button></li> 
@@ -84,7 +78,7 @@
                 <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%);">
                     <h1>My Projects</h1>
                     <h2>
-                        <ul style = "align-items: center; justify-content: center;">
+                        <ul style = "display: flex; align-items: center; justify-content: center;">
                             <li><a href = "https://github.com/Stryfee/Hangman-Assignment" target="_blank">
                                 <div style = "display: flex; flex-direction: column; align-items: center; width: 200px; height: 150px;"><img style = "width: 100px; height: 100px;" src = "https://raw.githubusercontent.com/openintents/filemanager/master/promotion/icons/ic_launcher_filemanager_512.png">Hangman</div>
                             </a></li>
@@ -99,7 +93,7 @@
             </div>
         </main>
         <script>
-            function introduction(firstLoad){
+            function introduction(){
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
                 document.getElementById("intro").style.transform = "translate(-15%,-50%)"
@@ -107,8 +101,6 @@
                 document.getElementById("image1").style.transform = "translate(-100%,0%)"
                 document.getElementById("image1").style.transition = "1s"
                 document.getElementById("navbar").style.visibility = "visible"
-                document.getElementById("navbar").style.display = "flex"
-                document.getElementById("navbar").style.transform = "translate(-50%,125%)"
                 document.getElementById("navbar").style.opacity = "100%"
                 document.getElementById("navbar").style.transition= "1s"
                 document.getElementById("navbar").style.transitionDelay= "2s"           
@@ -120,15 +112,12 @@
             function movePage(id1, id2){
                 document.getElementById(id1).style.opacity = "0%"
                 document.getElementById(id1).style.transition = "1s"
-                document.getElementById(id1).style.transitionDelay = "1s"
                 document.getElementById(id1).style.display = "none"
-                document.getElementById(id1).style.transitionDelay = "1s"
 
-                document.getElementById(id2).style.display = "flex"
                 document.getElementById(id2).style.visibility = "visible"
+                document.getElementById(id2).style.display = "block"
                 document.getElementById(id2).style.opacity = "100%"
                 document.getElementById(id2).style.transition = "1s"
-                document.getElementById(id2).style.transitionDelay = "1s"
             }
         </script>
     </body>
