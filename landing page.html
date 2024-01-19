@@ -31,14 +31,6 @@
             left:50%;
             transform: translate(-50%,-50%);
         }
-        .navbar2{
-            visibility: hidden;
-            opacity: 0%;
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-        }
         .MainPage{
             display: block;
             position:absolute;
@@ -59,7 +51,7 @@
             <div id = "MainPage" class = "MainPage">
             <div class = "centerImage">
                 <div class = "container">
-                    <img id = "image1" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;" onclick="introduction()">
+                    <img id = "image1" onclick = "introduction()" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
                     <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
                 </div>  
             </div>
@@ -82,7 +74,14 @@
             
             <!--Projects Page-->
             <div id = "ProjectsPage" class="ProjectsPage">
-                <div style = "position:absolute; left:50%; transform: translateX(-50%);">
+                <div>
+                    <ul style = "display: flex; align-content: end;">
+                        <li><button onclick="movePage('ProjectsPage', 'MainPage')" style = "color: white; font-size: large; font-weight: bold;">Main Page</button></li>
+                        <li><button>Resume & Connections</button></li>
+                        <li><button>Contact me</button></li> 
+                    </ul>
+                </div>
+                <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%);">
                     <h1>My Projects</h1>
                     <h2>
                         <ul style = "align-items: center; justify-content: center;">
@@ -100,7 +99,7 @@
             </div>
         </main>
         <script>
-            function introduction(){
+            function introduction(firstLoad){
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
                 document.getElementById("intro").style.transform = "translate(-15%,-50%)"
@@ -112,7 +111,7 @@
                 document.getElementById("navbar").style.transform = "translate(-50%,125%)"
                 document.getElementById("navbar").style.opacity = "100%"
                 document.getElementById("navbar").style.transition= "1s"
-                document.getElementById("navbar").style.transitionDelay= "2s"                
+                document.getElementById("navbar").style.transitionDelay= "2s"           
             }
             function showContact(){
                 document.getElementById("Contact").style.visibility = "visible"
