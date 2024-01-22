@@ -3,39 +3,25 @@
     <head>
         <link rel="stylesheet" href ="pallette.css">
         <style>
-        .container{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-        .centerImage{
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-40%,-50%);
-        }
-        .centerIntro{
-            visibility: hidden;
-            opacity: 0%;
-            position:absolute;
-            width: 200%;
-            top:50%;
-            left:50%;
-            transform:translate(-40%,-50%);
-        }
-        .navbar{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            visibility: hidden;
-            opacity: 0%;
-        }
-        .MainPage{
-            opacity: 100%;
-        }
-        .ProjectsPage{
-            visibility: hidden;
-        }
+            .centerIntro{
+                visibility: visible;
+                opacity: 0%;
+                width: 200%;
+            }
+            .navbar{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                visibility: hidden;
+                opacity: 0%;
+            }
+            .MainPage{
+                opacity: 100%;
+            }
+            .ProjectsPage{
+                visibility: hidden;
+                display:none
+            }
         </style>
         
     </head>
@@ -43,23 +29,16 @@
         <main>
             <!--Main Page-->
             <div id = "MainPage" class = "MainPage">
-            <div class = "centerImage">
-                <div class = "container">
-                    <img id = "image1" onclick = "introduction()" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
-                    <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
-                </div>  
-            </div>
-            
+                <div style = "display: flex; flex-wrap:wrap; align-content:center; justify-content:center; position: absolute; top: 50%; left:50%; transform:translate(-50%,-50%)">
+                <img id = "image1" onclick = "introduction()" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" style="margin: 0px; width:200px; height:200px;">
+                <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>            
+                </div>        
             <div>
                 <h2>
                     <ul class = "navbar" id = "navbar">
-                    <li><a onclick="movePage('MainPage', 'ProjectsPage')" >Projects</a></li>
-                    <li><a>Resume & Connections</a></li>
-                    <li>
-                        <div>
-                            <button onclick="movePage('MainPage', 'ContactPage')">Contact me</button>
-                        </div>
-                    </li>
+                    <li><button onclick="movePage('MainPage', 'ProjectsPage')" >Projects</button></li>
+                    <li><button>Resume & Connections</button></li>
+                    <li><button>Contact me</button></li>
  
                     </ul>
                 </h2>
@@ -68,13 +47,16 @@
             
             <!--Projects Page-->
             <div id = "ProjectsPage" class="ProjectsPage">
-                <div style = "display: flex; justify-content: flex-end;">
-                    <ul>
-                        <li><button onclick="movePage('ProjectsPage', 'MainPage')" style = "color: white; font-size: large; font-weight: bold;">Main Page</button></li>
+                <div style="display: flex; justify-content: flex-end; align-items: center;">
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                        <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
                         <li><button>Resume & Connections</button></li>
-                        <li><button>Contact me</button></li> 
+                        <li><button>Contact Me</button></li>
+                        <li><button>bbbbbbbbbbb</button></li>
                     </ul>
                 </div>
+                
+                
                 <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%);">
                     <h1>My Projects</h1>
                     <h2>
@@ -92,6 +74,8 @@
                 </div>
             </div>
         </main>
+
+
         <script>
             function introduction(){
                 document.getElementById("intro").style.visibility = "visible"
