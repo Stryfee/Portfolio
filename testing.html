@@ -45,7 +45,7 @@
         </div>
         <div style = "display:flex; flex-direction: row; justify-content: center; align-items: center;">
             <h2>
-                <ul style="margin: 0%; padding: 0%;">
+                <ul style="margin: 0%; padding: 0%;" id = "navbar" onclick = "Movement()">
                 <li><button>Projects</button></li>
                 <li><button>Resume & Connections</button></li>
                 <li>
@@ -56,5 +56,11 @@
             </h2>
         </div>
     </div>
+    <script>
+        function Movement(){
+            const navbar = document.getElementById("navbar")
+            navbar.style.transform = "translateY(-50%)"
+        }
+    </script>
 </body>
 </html>
