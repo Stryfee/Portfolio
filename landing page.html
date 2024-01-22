@@ -4,7 +4,7 @@
         <link rel="stylesheet" href ="pallette.css">
         <style>
             .centerIntro{
-                visibility: visible;
+                visibility: hidden;
                 opacity: 0%;
                 width: 500px;
             }
@@ -22,8 +22,7 @@
                 padding:0%; 
                 margin:0%; 
                 display: flex; 
-                flex-direction: 
-                column; 
+                flex-direction: column; 
                 flex-wrap:wrap; 
                 justify-content:center; 
                 align-content:center; 
@@ -43,9 +42,13 @@
         <main>
             <!--Main Page-->
             <div id = "MainPage" class = "MainPage">
-                <div style = "padding:0%; margin:0%; display:flex; flex-direction:row;">
-                    <img id = "image1" onclick = "introduction()" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" style="margin: 0px; width:200px; height:200px;">
-                    <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>            
+                <div>
+                    <img src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png" style = "rotate:-45deg; position:absolute; top:50%; left:50%; transform:translate(-100%,-75%)">
+                </div>
+
+                <div style = "padding:0%; margin:0%; display:flex; flex-direction:row; align-items:center;">
+                    <img id = "image1" onclick = "introduction()" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" style="margin: 0px; width:200px; height:200px; position:absolute; left:50%; transform:translateX(-50%); z-index:5;">
+                    <p id = "intro" class = "centerIntro" style ="padding: 5px; z-index:4;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>            
                 </div>  
             <div>
                 <h2>
@@ -53,7 +56,6 @@
                     <li><button onclick="movePage('MainPage', 'ProjectsPage')" >Projects</button></li>
                     <li><button>Resume & Connections</button></li>
                     <li><button>Contact me</button></li>
-    
                     </ul>
                 </h2>
             </div>
@@ -94,9 +96,9 @@
             function introduction(){
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
-                document.getElementById("intro").style.transform = "translate(-15%,0%)"
+                document.getElementById("intro").style.transform = "translateX(15%)"
                 document.getElementById("intro").style.transition = "1s"
-                document.getElementById("image1").style.transform = "translate(-100%,0%)"
+                document.getElementById("image1").style.transform = "translateX(-200%)"
                 document.getElementById("image1").style.transition = "1s"
                 document.getElementById("navbar").style.visibility = "visible"
                 document.getElementById("navbar").style.opacity = "100%"
