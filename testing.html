@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vineet Patel</title>
+    <style>
+    li > a{
+        text-decoration: none;
+        text-justify:center;
+        text-align: center;
+        color:whitesmoke;
+    }
+    li > a:hover{
+        background-color: #333333;
+        transition: 500ms;
+    }
+    li{
+        display: inline-flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 5px;
+        padding: 0;
+        background-color: #333333;
+    }
+    li > button{
+        border:none; 
+        background-color: inherit;
+        color: whitesmoke;
+        width: 100px;
+        height: 50px;
+        cursor: pointer;
+    }
+    li>button:hover{
+        background-color: #333333;
+        transition: 500ms;
+    }
+    </style>
+</head>
+<body>
+    <div style = "position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);">
+        <div style = "display: inline-flex; flex-wrap: wrap; justify-content: center; align-content: center; align-items: center;">
+            <img id = "image1" onclick = "introduction()" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
+            <p id = "intro" class = "centerIntro" style ="padding: 5px; width: 50%;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>        
+        </div>
+        <div style = "display:flex; flex-direction: row; justify-content: center; align-items: center;">
+            <h2>
+                <ul style="margin: 0%; padding: 0%;" id = "navbar" onclick = "Movement()">
+                <li><button>Projects</button></li>
+                <li><button>Resume & Connections</button></li>
+                <li>
+                    <button>Contact me</button>
+                </li>
+
+                </ul>
+            </h2>
+        </div>
+    </div>
+    <script>
+        function Movement(){
+            const navbar = document.getElementById("navbar")
+            navbar.style.transform = "translateY(-50%)"
+        }
+    </script>
+</body>
+</html>
