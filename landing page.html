@@ -8,6 +8,18 @@
                 opacity: 0%;
                 width: 500px;
             }
+            @keyframes arrow {
+                0% {transform: translateX(0px);}
+                50% {transform: translateX(20px);}
+                100%{transform: translateX(0px);}
+            }
+            .arrow{
+                position: absolute;
+                left:-20%;
+                animation-name: arrow;
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+            }
             .navbar{
                 display: flex;
                 justify-content: center;
@@ -43,7 +55,7 @@
             <!--Main Page-->
             <div id = "MainPage" class = "MainPage">
                 <div>
-                    <img src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png" style = "rotate:-45deg; position:absolute; top:50%; left:50%; transform:translate(-100%,-75%)">
+                    <img id = "arrow" class = "arrow" src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png">
                 </div>
 
                 <div style = "padding:0%; margin:0%; display:flex; flex-direction:row; align-items:center;">
@@ -94,6 +106,7 @@
 
         <script>
             function introduction(){
+                document.getElementById("arrow").style.visibility = "hidden"
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
                 document.getElementById("intro").style.transform = "translateX(15%)"
