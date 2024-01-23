@@ -73,11 +73,20 @@
             }
         </style>
         <title>Vineet Patel</title>
+        <title>Vineet Patel</title>
     </head>
     <body>        
         <main>
             <!--Main Page-->
             <div id = "MainPage" class = "MainPage">
+                <div>
+                    <img id = "arrow" class = "arrow" src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png">
+                </div>
+
+                <div style = "padding:0%; margin:0%; display:flex; flex-direction:row; align-items:center;">
+                    <img id = "image1" onclick = "introduction()" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" style="margin: 0px; width:200px; height:200px; position:absolute; left:50%; transform:translateX(-50%); z-index:5;">
+                    <p id = "intro" class = "centerIntro" style ="padding: 5px; z-index:4;">Hi! I am Vineet Patel, a Student at Dunbarton High School with a deep interest in Computer Science and Software Engineering! I have lots of experience with Coding Languages such as Java and Python, with a little bit of Front-end Programming in my arsenal! I enjoy playing multiple sports which include Rugby and Basketball!
+                    </p>            
                 <div>
                     <img id = "arrow" class = "arrow" src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png">
                 </div>
@@ -106,6 +115,9 @@
                 <div style="display: flex; justify-content: flex-end; align-items: center;">
                     <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
                         <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
+                <div style="display: flex; justify-content: flex-end; align-items: center;">
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                        <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
                         <li><button>Resume & Connections</button></li>
                         <li class = "dropbutton">                            
                             <button onclick = "contactList()">Contact Me</button>
@@ -115,6 +127,9 @@
                         </li>
                     </ul>
                 </div>
+                
+                
+                <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%); ">
                 
                 
                 <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%); ">
@@ -136,13 +151,18 @@
         </main>
 
 
+
+
         <script>
             function introduction(){
+                document.getElementById("arrow").style.visibility = "hidden"
                 document.getElementById("arrow").style.visibility = "hidden"
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
                 document.getElementById("intro").style.transform = "translateX(15%)"
+                document.getElementById("intro").style.transform = "translateX(15%)"
                 document.getElementById("intro").style.transition = "1s"
+                document.getElementById("image1").style.transform = "translateX(-200%)"
                 document.getElementById("image1").style.transform = "translateX(-200%)"
                 document.getElementById("image1").style.transition = "1s"
                 document.getElementById("navbar").style.visibility = "visible"
