@@ -19,26 +19,27 @@ p{
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
 }
-li > a{
-    text-decoration: none;
-    text-justify:center;
-    text-align: center;
-    color:currentColor;
-}
-li > a:hover{
-    background-color: #333333;
-    transition: 500ms;
-}
+
 li{
     display: inline-flex;
+    align-items: center;
     flex-direction: row;
     list-style-type: none;
     margin: 5px;
     padding: 0;
-    background-color: #222222;
+}
+li > a{
+    text-decoration: none;
+    color: inherit;
+}
+li>a:hover{
+    background-color: #333333;
+    transition: 500ms;
 }
 li > button{
     border:none; 
+    width: 100px;
+    height: 50px;
     background-color: #222222;
     color: #CDCDCD;
     cursor: pointer;

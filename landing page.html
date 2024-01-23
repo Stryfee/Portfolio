@@ -3,79 +3,121 @@
     <head>
         <link rel="stylesheet" href ="pallette.css">
         <style>
-        .container{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-        .centerImage{
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-40%,-50%);
-        }
-        .centerIntro{
-            visibility: hidden;
-            opacity: 0%;
-            position:absolute;
-            width: 200%;
-            top:50%;
-            left:50%;
-            transform:translate(-40%,-50%);
-        }
-        .navbar{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            visibility: hidden;
-            opacity: 0%;
-        }
-        .MainPage{
-            opacity: 100%;
-        }
-        .ProjectsPage{
-            visibility: hidden;
-        }
+            .centerIntro{
+                visibility: hidden;
+                opacity: 0%;
+                width: 500px;
+            }
+            @keyframes arrow {
+                0% {transform: translateX(0px);}
+                50% {transform: translateX(20px);}
+                100%{transform: translateX(0px);}
+            }
+            .arrow{
+                position: absolute;
+                left:-20%;
+                animation-name: arrow;
+                animation-iteration-count: infinite;
+                animation-duration: 2s;
+            }
+            .navbar{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                visibility: hidden;
+                opacity: 0%;
+                padding: 0%;
+                margin: 0%;
+            }
+            .dropbutton{
+                display: inline-block;
+            }
+            .contacts{
+                display: none;
+                z-index: 1;
+            }
+            .contacts > a{
+                font-family: "Raleway", sans-serif;
+                display:block;
+                position:absolute;
+                margin-top: 10px;
+                background-color: #222222;
+                text-decoration: none;
+                font-size:20px;
+                color: white;
+                width: 100px;
+                padding:10px;
+                text-align: center;
+            }
+            .contacts > a:hover{
+                background-color: #333333;
+                transition: 500ms;
+            }
+            .MainPage{
+                opacity: 100%;
+                padding:0%; 
+                margin:0%; 
+                display: flex; 
+                flex-direction: column; 
+                flex-wrap:wrap; 
+                justify-content:center; 
+                align-content:center; 
+                position:absolute; 
+                top:50%; 
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            .ProjectsPage{
+                visibility: hidden;
+                display:none
+            }
         </style>
-        
+        <title>Vineet Patel</title>
     </head>
     <body>        
         <main>
             <!--Main Page-->
             <div id = "MainPage" class = "MainPage">
-            <div class = "centerImage">
-                <div class = "container">
-                    <img id = "image1" onclick = "introduction()" src="https://th.bing.com/th/id/R.fc9ff391e0b92927fc4a526a939b2ca3?rik=M35YB1MrloATrw&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fd%2fd4%2fCat_March_2010-1a.jpg&ehk=lmx5Dow%2btE7KUtrgWeamODrZNBeLisLC4x4%2bkXQRDq8%3d&risl=1&pid=ImgRaw&r=0" style="margin: 0px; width:200px; height:200px;">
-                    <p id = "intro" class = "centerIntro" style ="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad tempore aut amet autem aperiam eos iste inventore. Nam nulla inventore adipisci aliquam, distinctio debitis modi eum molestiae, aut illum quia! </p>
+                <div>
+                    <img id = "arrow" class = "arrow" src = "https://www.freeiconspng.com/thumbs/white-arrow-png/white-arrow-transparent-png-10.png">
+                </div>
+
+                <div style = "padding:0%; margin:0%; display:flex; flex-direction:row; align-items:center;">
+                    <img id = "image1" onclick = "introduction()" src="https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg" style="margin: 0px; width:200px; height:200px; position:absolute; left:50%; transform:translateX(-50%); z-index:5;">
+                    <p id = "intro" class = "centerIntro" style ="padding: 5px; z-index:4;">Hi! I am Vineet Patel, a Student at Dunbarton High School with a deep interest in Computer Science and Software Engineering! I have lots of experience with Coding Languages such as Java and Python, with a little bit of Front-end Programming in my arsenal! I enjoy playing multiple sports which include Rugby and Basketball!
+                    </p>            
                 </div>  
-            </div>
-            
             <div>
-                <h2>
-                    <ul class = "navbar" id = "navbar">
-                    <li><a onclick="movePage('MainPage', 'ProjectsPage')" >Projects</a></li>
-                    <li><a>Resume & Connections</a></li>
-                    <li>
-                        <div>
-                            <button onclick="movePage('MainPage', 'ContactPage')">Contact me</button>
-                        </div>
-                    </li>
- 
-                    </ul>
-                </h2>
+                <ul class = "navbar" id = "navbar">
+                <li><button onclick="movePage('MainPage', 'ProjectsPage')" >Projects</button></li>
+                <li><button>Resume & Connections</button></li>
+                <li class = "dropbutton">                            
+                    <button onclick = "contactList()">Contact Me</button>
+                    <div class = "contacts" id = "dropped-contacts" style = "display: none;">
+                        <a href = "mailto:vineet.patel9983@gmail.com">Email</a>
+                    </div>
+                </li>
+                </ul>                
             </div>
             </div>
             
             <!--Projects Page-->
             <div id = "ProjectsPage" class="ProjectsPage">
-                <div style = "display: flex; justify-content: flex-end;">
-                    <ul>
-                        <li><button onclick="movePage('ProjectsPage', 'MainPage')" style = "color: white; font-size: large; font-weight: bold;">Main Page</button></li>
+                <div style="display: flex; justify-content: flex-end; align-items: center;">
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                        <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
                         <li><button>Resume & Connections</button></li>
-                        <li><button>Contact me</button></li> 
+                        <li class = "dropbutton">                            
+                            <button onclick = "contactList()">Contact Me</button>
+                            <div class = "contacts" id = "dropped-contacts" style = "display: none;">
+                                <a href = "mailto:vineet.patel9983@gmail.com">Email</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-                <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%);">
+                
+                
+                <div style = "position:absolute; left:50%;top: 50%; transform: translate(-50%,-100%); ">
                     <h1>My Projects</h1>
                     <h2>
                         <ul style = "display: flex; align-items: center; justify-content: center;">
@@ -92,13 +134,16 @@
                 </div>
             </div>
         </main>
+
+
         <script>
             function introduction(){
+                document.getElementById("arrow").style.visibility = "hidden"
                 document.getElementById("intro").style.visibility = "visible"
                 document.getElementById("intro").style.opacity = "100%"
-                document.getElementById("intro").style.transform = "translate(-15%,-50%)"
+                document.getElementById("intro").style.transform = "translateX(15%)"
                 document.getElementById("intro").style.transition = "1s"
-                document.getElementById("image1").style.transform = "translate(-100%,0%)"
+                document.getElementById("image1").style.transform = "translateX(-200%)"
                 document.getElementById("image1").style.transition = "1s"
                 document.getElementById("navbar").style.visibility = "visible"
                 document.getElementById("navbar").style.opacity = "100%"
@@ -118,6 +163,14 @@
                 document.getElementById(id2).style.display = "block"
                 document.getElementById(id2).style.opacity = "100%"
                 document.getElementById(id2).style.transition = "1s"
+            }
+            function contactList(){
+                const drop = document.getElementById("dropped-contacts");
+                if(drop.style.display === "none"){
+                    drop.style.display = "block";
+                }else{
+                    drop.style.display = "none";
+                }
             }
         </script>
     </body>
