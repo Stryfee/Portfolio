@@ -30,7 +30,8 @@ li{
 }
 li > a{
     text-decoration: none;
-    color: inherit;
+    background-color: #222222;
+    color: #CDCDCD;
 }
 li>a:hover{
     background-color: #333333;
@@ -42,10 +43,91 @@ li > button{
     height: 50px;
     background-color: #222222;
     color: #CDCDCD;
+    font-family: 'Raleway', sans-serif;
     cursor: pointer;
 }
-
+a > button{
+    border:none; 
+    width: 100px;
+    height: 50px;
+    background-color: #222222;
+    color: #CDCDCD;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+}
 li>button:hover{
     background-color: #333333;
     transition: 500ms;
+}
+a>button:hover{
+    background-color: #333333;
+    transition: 500ms;
+}
+.centerIntro{
+    visibility: hidden;
+    opacity: 0%;
+    width: 500px;
+}
+@keyframes arrow {
+    0% {transform: translateX(0px);}
+    50% {transform: translateX(20px);}
+    100%{transform: translateX(0px);}
+}
+.arrow{
+    position: absolute;
+    left:-20%;
+    animation-name: arrow;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    visibility: hidden;
+    opacity: 0%;
+    padding: 0%;
+    margin: 0%;
+}
+.dropbutton{
+    display: inline-block;
+}
+.contacts{
+    display: none;
+    z-index: 1;
+}
+.contacts > a{
+    font-family: "Raleway", sans-serif;
+    display:block;
+    position:absolute;
+    margin-top: 10px;
+    background-color: #222222;
+    text-decoration: none;
+    font-size:20px;
+    color: white;
+    width: 100px;
+    padding:10px;
+    text-align: center;
+}
+.contacts > a:hover{
+    background-color: #333333;
+    transition: 500ms;
+}
+.MainPage{
+    opacity: 100%;
+    padding:0%; 
+    margin:0%; 
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap:wrap; 
+    justify-content:center; 
+    align-content:center; 
+    position:absolute; 
+    top:50%; 
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.ProjectsPage{
+    visibility: hidden;
+    display:none
 }

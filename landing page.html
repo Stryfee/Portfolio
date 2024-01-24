@@ -3,74 +3,7 @@
     <head>
         <link rel="stylesheet" href ="pallette.css">
         <style>
-            .centerIntro{
-                visibility: hidden;
-                opacity: 0%;
-                width: 500px;
-            }
-            @keyframes arrow {
-                0% {transform: translateX(0px);}
-                50% {transform: translateX(20px);}
-                100%{transform: translateX(0px);}
-            }
-            .arrow{
-                position: absolute;
-                left:-20%;
-                animation-name: arrow;
-                animation-iteration-count: infinite;
-                animation-duration: 2s;
-            }
-            .navbar{
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                visibility: hidden;
-                opacity: 0%;
-                padding: 0%;
-                margin: 0%;
-            }
-            .dropbutton{
-                display: inline-block;
-            }
-            .contacts{
-                display: none;
-                z-index: 1;
-            }
-            .contacts > a{
-                font-family: "Raleway", sans-serif;
-                display:block;
-                position:absolute;
-                margin-top: 10px;
-                background-color: #222222;
-                text-decoration: none;
-                font-size:20px;
-                color: white;
-                width: 100px;
-                padding:10px;
-                text-align: center;
-            }
-            .contacts > a:hover{
-                background-color: #333333;
-                transition: 500ms;
-            }
-            .MainPage{
-                opacity: 100%;
-                padding:0%; 
-                margin:0%; 
-                display: flex; 
-                flex-direction: column; 
-                flex-wrap:wrap; 
-                justify-content:center; 
-                align-content:center; 
-                position:absolute; 
-                top:50%; 
-                left:50%;
-                transform:translate(-50%,-50%);
-            }
-            .ProjectsPage{
-                visibility: hidden;
-                display:none
-            }
+
         </style>
         <title>Vineet Patel</title>
         <title>Vineet Patel</title>
@@ -90,10 +23,10 @@
             <div>
                 <ul class = "navbar" id = "navbar">
                 <li><button onclick="movePage('MainPage', 'ProjectsPage')" >Projects</button></li>
-                <li><button>Resume & Connections</button></li>
+                <li><a href = "https://docs.google.com/document/d/1MPxa07fk2xa9Nx851hT2eMMngm0iXXjqbSVlVJq_HJY/edit?usp=sharing" target="_blank"><button>Resume</button></a></li>
                 <li class = "dropbutton">                            
-                    <button onclick = "contactList()">Contact Me</button>
-                    <div class = "contacts" id = "dropped-contacts" style = "display: none;">
+                    <button onclick = "contactList('dropped-contacts1')">Contact Me</button>
+                    <div class = "contacts" id = "dropped-contacts1" style = "display: none;">
                         <a href = "mailto:vineet.patel9983@gmail.com">Email</a>
                     </div>
                 </li>
@@ -103,15 +36,12 @@
             
             <!--Projects Page-->
             <div id = "ProjectsPage" class="ProjectsPage">
-                <div style="display: flex; justify-content: flex-end; align-items: center;">
-                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
+                <div style="display: flex; justify-content: flex-end; align-items: center; ">
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; padding:10px">
                         <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
-                <div style="display: flex; justify-content: flex-end; align-items: center;">
-                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; gap: 10px;">
-                        <li><button onclick="movePage('ProjectsPage', 'MainPage')">Main Page</button></li>
-                        <li><button>Resume & Connections</button></li>
+                        <li><a href = "https://docs.google.com/document/d/1MPxa07fk2xa9Nx851hT2eMMngm0iXXjqbSVlVJq_HJY/edit?usp=sharing" target="_blank"><button>Resume</button></a></li>
                         <li class = "dropbutton">                            
-                            <button onclick = "contactList()">Contact Me</button>
+                            <button onclick = "contactList('dropped-contacts')">Contact Me</button>
                             <div class = "contacts" id = "dropped-contacts" style = "display: none;">
                                 <a href = "mailto:vineet.patel9983@gmail.com">Email</a>
                             </div>
@@ -175,8 +105,8 @@
                 document.getElementById(id2).style.opacity = "100%"
                 document.getElementById(id2).style.transition = "1s"
             }
-            function contactList(){
-                const drop = document.getElementById("dropped-contacts");
+            function contactList(id){
+                const drop = document.getElementById(id);
                 if(drop.style.display === "none"){
                     drop.style.display = "block";
                 }else{
